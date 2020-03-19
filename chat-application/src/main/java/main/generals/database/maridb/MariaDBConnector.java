@@ -7,6 +7,9 @@ import java.sql.Statement;
 
 import main.generals.config.reader.ConfigReader;
 
+// TODO write test
+// TODO write document
+// TODO write chain of responsibility
 public class MariaDBConnector {
 	private static final String CONNECTION_ADDRESS = "jdbc:mariadb://localhost:3306/chat";
 	private static final String USER = ConfigReader.getDatabaseUserName();
