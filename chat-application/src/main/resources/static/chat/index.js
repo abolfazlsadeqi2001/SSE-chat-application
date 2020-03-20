@@ -18,7 +18,6 @@ function send (){
 	var textAreaElement = document.querySelector("textarea");
 	
 	$.post("/new/message",{message:textAreaElement.value},function(e){
-		console.log(e);
 		textAreaElement.value = "";
 	});
 }
