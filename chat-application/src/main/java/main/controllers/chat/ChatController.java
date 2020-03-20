@@ -14,7 +14,7 @@ import main.controllers.authentication.AuthenticationController;
 
 @RestController
 public class ChatController {
-	
+	// TODO save messages into database
 	public static final String MESSAGE_PARAM = "message";
 	
 	Set<SseEmitter> emitters = new HashSet<SseEmitter>();

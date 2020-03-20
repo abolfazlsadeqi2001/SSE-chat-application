@@ -10,8 +10,14 @@
 		<title>chat room</title>
 		
 		<script type="text/javascript" src="index.js"></script>
+		
+		<link href="index.css" rel="stylesheet" />
 	</head>
 	<body>
-		
+		<div class="message-container"></div>
+		<form class="sending-container" method="POST" action="/new/message" >
+			<textarea name="message"></textarea>
+			<input type="submit" value="send" />
+		</div>
 	</body>
 </html>
