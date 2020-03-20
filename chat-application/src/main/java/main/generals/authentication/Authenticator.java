@@ -9,7 +9,6 @@ import main.generals.authentication.models.User;
 import main.generals.database.maridb.MariaDBConnector;
 
 // TODO write document
-// TODO write tests
 public class Authenticator {
 	
 	public static User login(User user) throws Exception {
