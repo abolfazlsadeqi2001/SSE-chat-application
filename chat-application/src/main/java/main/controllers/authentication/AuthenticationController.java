@@ -44,6 +44,8 @@ public class AuthenticationController {
 			res.addCookie(userNameCookie);
 			res.addCookie(passwordCookie);
 			
+			model.addAttribute(user);
+			
 			return CHAT_ROOM_PATH;
 		}catch(Exception e) {
 			model.addAttribute("error_message", e.getMessage());
@@ -71,6 +73,8 @@ public class AuthenticationController {
 			
 			res.addCookie(userNameCookie);
 			res.addCookie(passwordCookie);
+			
+			model.addAttribute(user);
 			
 			return CHAT_ROOM_PATH;
 		}catch(Exception e) {
