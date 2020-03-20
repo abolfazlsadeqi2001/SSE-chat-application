@@ -19,7 +19,7 @@ import main.generals.authentication.models.User;
 public class AuthenticationController {
 	
 	public static final String AUTHENTICATION_PATH = "/authentication";
-	public static final String CHAT_ROOM_PATH = "/chat";
+	public static final String CHAT_ROOM_PATH = "/chat/index.html";
 	public static final String USER_NAME_COOKKIE_NAME = "userName";
 	public static final String PASSWORD_COOKKIE_NAME = "password";
 	public static final String ERROR_MESSAGE_ATTRIBUTE = "error_message";
@@ -53,7 +53,7 @@ public class AuthenticationController {
 			
 			model.addAttribute(user);
 			
-			return CHAT_ROOM_PATH;
+			return "redirect:"+CHAT_ROOM_PATH;
 		}catch(Exception e) {
 			model.addAttribute(ERROR_MESSAGE_ATTRIBUTE, e.getMessage());
 			return AUTHENTICATION_PATH;
@@ -83,7 +83,7 @@ public class AuthenticationController {
 			
 			model.addAttribute(user);
 			
-			return CHAT_ROOM_PATH;
+			return "redirect:"+CHAT_ROOM_PATH;
 		}catch(Exception e) {
 			model.addAttribute(ERROR_MESSAGE_ATTRIBUTE, e.getMessage());
 			return AUTHENTICATION_PATH;
