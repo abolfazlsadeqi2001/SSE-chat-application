@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import main.generals.authentication.Authenticator;
 import main.generals.authentication.models.User;
 
+// TODO add session
+// TODO add filter by session then by cookie
+
 @Controller
 public class AuthenticationController {
 	
