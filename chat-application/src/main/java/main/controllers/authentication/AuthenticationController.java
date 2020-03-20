@@ -18,11 +18,12 @@ import main.generals.authentication.models.User;
 @Controller
 public class AuthenticationController {
 	
-	private static final String AUTHENTICATION_PATH = "/authentication";
-	private static final String CHAT_ROOM_PATH = "/chat";
-	private static final String USER_NAME_COOKKIE_NAME = "username";
-	private static final String PASSWORD_COOKKIE_NAME = "password";
-	private static final int COOKIES_LIFE_TIME = 4 * 24 * 60 * 60;
+	public static final String AUTHENTICATION_PATH = "/authentication";
+	public static final String CHAT_ROOM_PATH = "/chat";
+	public static final String USER_NAME_COOKKIE_NAME = "userName";
+	public static final String PASSWORD_COOKKIE_NAME = "password";
+	public static final String ERROR_MESSAGE_ATTRIBUTE = "error_message";
+	public static final int COOKIES_LIFE_TIME = 4 * 24 * 60 * 60;
 	
 	@RequestMapping("/authentication")
 	public String authentication() {
@@ -30,8 +31,8 @@ public class AuthenticationController {
 	}
 	
 	@RequestMapping("/login")
-	public String login(@RequestParam(name="username",required=true) String userName,
-			@RequestParam(name="password",required=true) String password,
+	public String login(@RequestParam(name=USER_NAME_COOKKIE_NAME,required=true) String userName,
+			@RequestParam(name= PASSWORD_COOKKIE_NAME,required=true) String password,
 			HttpServletResponse res,
 			Model model) {
 		try {
@@ -54,14 +55,14 @@ public class AuthenticationController {
 			
 			return CHAT_ROOM_PATH;
 		}catch(Exception e) {
-			model.addAttribute("error_message", e.getMessage());
+			model.addAttribute(ERROR_MESSAGE_ATTRIBUTE, e.getMessage());
 			return AUTHENTICATION_PATH;
 		}
 	}
 	
 	@RequestMapping("/register")
-	public String register(@RequestParam(name="username",required=true) String userName,
-			@RequestParam(name="password",required=true) String password,
+	public String register(@RequestParam(name=USER_NAME_COOKKIE_NAME,required=true) String userName,
+			@RequestParam(name=PASSWORD_COOKKIE_NAME,required=true) String password,
 			HttpServletResponse res,
 			Model model) {
 		try {
@@ -84,7 +85,7 @@ public class AuthenticationController {
 			
 			return CHAT_ROOM_PATH;
 		}catch(Exception e) {
-			model.addAttribute("error_message", e.getMessage());
+			model.addAttribute(ERROR_MESSAGE_ATTRIBUTE, e.getMessage());
 			return AUTHENTICATION_PATH;
 		}
 	}
