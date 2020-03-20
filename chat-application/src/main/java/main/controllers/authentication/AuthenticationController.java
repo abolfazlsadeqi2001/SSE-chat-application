@@ -13,7 +13,8 @@ import main.generals.authentication.models.User;
 
 // TODO add session
 // TODO add filter by session then by cookie
-
+// TODO write document
+// TODO write tag because of long length of methods
 @Controller
 public class AuthenticationController {
 	
@@ -22,6 +23,11 @@ public class AuthenticationController {
 	private static final String USER_NAME_COOKKIE_NAME = "username";
 	private static final String PASSWORD_COOKKIE_NAME = "password";
 	private static final int COOKIES_LIFE_TIME = 4 * 24 * 60 * 60;
+	
+	@RequestMapping("/authentication")
+	public String authentication() {
+		return AUTHENTICATION_PATH;
+	}
 	
 	@RequestMapping("/login")
 	public String login(@RequestParam(name="username",required=true) String userName,
